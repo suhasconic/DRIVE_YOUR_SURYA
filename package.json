@@ -1,0 +1,8 @@
+{
+    "name": "surya-car-town",
+    "version": "1.0.0",
+    "description": "Premium Car Rental Website",
+    "scripts": {
+        "build": "echo 'No build needed - static site'"
+    }
+}
