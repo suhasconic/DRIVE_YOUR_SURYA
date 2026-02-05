@@ -1031,8 +1031,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1a1a1a;
-  /* Dark background for contrast */
+  background: transparent;
+  /* Transparent to blend with card background */
   padding: var(--spacing-md);
   overflow: hidden;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
@@ -1043,10 +1043,13 @@ button {
   height: 100%;
   object-fit: contain;
   transition: transform var(--transition-slow);
+  filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.3));
+  /* Blue glow effect */
 }
 
 .fleet-card:hover .card-img {
   transform: scale(1.05);
+  filter: drop-shadow(0 8px 20px rgba(37, 99, 235, 0.5));
 }
 
 .card-content {
@@ -1080,10 +1083,10 @@ button {
 
 .enquire-btn {
   width: 100%;
-  background: #D4AF37;
-  /* Gold background */
-  color: #000;
-  /* Black text for contrast */
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  /* Blue gradient */
+  color: #fff;
+  /* White text */
   border: none;
   padding: 12px;
   border-radius: 8px;
@@ -1092,13 +1095,14 @@ button {
   transition: all var(--transition-fast);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
 }
 
 .enquire-btn:hover {
-  background: #FFD700;
-  /* Brighter gold on hover */
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  /* Brighter blue on hover */
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
 }
 
 /* V9 - Glass Steps */
