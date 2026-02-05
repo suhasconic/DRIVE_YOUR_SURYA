@@ -193,9 +193,13 @@ button {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--color-bg-primary);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: var(--spacing-sm) 0;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #2563eb, #7c3aed, #2563eb) 1;
+  padding: var(--spacing-md) 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .header-container {
@@ -707,16 +711,17 @@ button {
 }
 
 .btn-outline-header {
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(96, 165, 250, 0.4);
   color: var(--color-white);
-  background: transparent;
-  padding: 8px 24px;
-  border-radius: 6px;
+  background: rgba(37, 99, 235, 0.1);
+  padding: 10px 24px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.2);
   display: inline-flex;
   align-items: center;
-  transition: all var(--transition-fast);
 }
 
 .btn-outline-header:hover {
@@ -725,22 +730,23 @@ button {
 }
 
 .btn-whatsapp-header {
-  background: #25D366;
-  color: var(--color-white);
-  padding: 8px 24px;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
   display: inline-flex;
   align-items: center;
-  border: none;
-  margin-left: 12px;
-  transition: all var(--transition-fast);
 }
 
 .btn-whatsapp-header:hover {
-  background: #1ebc57;
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #2EE876 0%, #1AA65D 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
 }
 
 .faq-icon {
@@ -1059,11 +1065,36 @@ button {
 
 .card-title {
   color: var(--color-white);
+  /* Reverted to a valid color property */
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 15px;
   font-family: var(--font-family-body);
   /* Modern sans */
+}
+
+.header-center-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.2);
+  }
 }
 
 .card-pricing {
