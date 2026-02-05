@@ -193,13 +193,13 @@ button {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 2px solid transparent;
-  border-image: linear-gradient(90deg, #2563eb, #7c3aed, #2563eb) 1;
-  padding: var(--spacing-md) 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 100%);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 3px solid;
+  border-image: linear-gradient(90deg, transparent, #2563eb, #7c3aed, #2563eb, transparent) 1;
+  padding: 20px 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .header-container {
