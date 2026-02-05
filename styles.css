@@ -10,19 +10,29 @@
    CSS CUSTOM PROPERTIES
    =================================== */
 :root {
-  /* Colors - Midnight Gold Theme */
-  --color-bg-primary: #050505;
-  /* Deepest Black */
-  --color-bg-secondary: #0A0A0A;
-  --color-bg-card: #111111;
-  --color-text-primary: #F9FAFB;
-  --color-text-secondary: #9CA3AF;
+  /* Colors - Blue Gradient Theme (from car_rental_test) */
+  --color-bg-primary: #0f172a;
+  /* Dark Slate */
+  --color-bg-secondary: #1e293b;
+  --color-bg-card: #1e293b;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
 
-  /* Gold Accents */
-  --color-accent-blue: rgba(212, 175, 55, 0.2);
-  /* Gold Fade */
-  --color-accent-blue-bright: #D4AF37;
-  /* Metallic Gold */
+  /* Blue Primary Accents */
+  --color-primary: #2563eb;
+  /* Blue 600 */
+  --color-primary-dark: #1d4ed8;
+  /* Blue 700 */
+  --color-accent-blue: rgba(37, 99, 235, 0.2);
+  /* Blue Fade */
+  --color-accent-blue-bright: #3b82f6;
+  /* Blue 500 */
+
+  /* Secondary Orange */
+  --color-secondary: #f59e0b;
+  /* Amber 500 */
+  --color-secondary-dark: #d97706;
+  /* Amber 600 */
 
   --color-white: #FFFFFF;
   --color-black: #000000;
@@ -38,7 +48,6 @@
 
   /* Border Radius */
   --radius-sm: 4px;
-  /* Sharper for luxury */
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-xl: 24px;
@@ -59,15 +68,16 @@
   --font-size-5xl: 3.5rem;
 
   /* Shadows */
-  --shadow-glow: 0 0 60px rgba(212, 175, 55, 0.15);
+  --shadow-glow: 0 0 60px rgba(37, 99, 235, 0.15);
   --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.7);
-  --shadow-neon: 0 0 20px rgba(212, 175, 55, 0.4);
+  --shadow-neon: 0 0 20px rgba(59, 130, 246, 0.4);
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #D4AF37 0%, #AA8929 100%);
-  --gradient-text: linear-gradient(135deg, #FDE68A 0%, #D4AF37 100%);
-  /* Gold Text Gradient */
-  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1), transparent 70%);
+  /* Gradients - Multi-color from car_rental_test */
+  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  --gradient-secondary: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --gradient-text: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+  /* Blue → Purple → Pink */
+  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.1), transparent 70%);
 
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1254,7 +1264,7 @@ button {
 
 /* ===================================
    V18 - SCROLL PROGRESS BAR
-   =================================== */
+   ===================================/* V18 Scroll Progress Indicator */
 .scroll-progress-container {
   position: absolute;
   bottom: 0;
@@ -1262,26 +1272,27 @@ button {
   width: 100%;
   height: 4px;
   background: rgba(255, 255, 255, 0.05);
-  z-index: 10;
+  overflow: visible;
 }
 
 .scroll-progress-bar {
   height: 100%;
+  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+  /* Blue gradient */
   width: 0%;
-  background: linear-gradient(90deg, var(--color-accent-blue-bright), #D4AF37);
   transition: width 0.1s ease-out;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
 }
 
 .scroll-progress-car {
   position: absolute;
-  top: 50%;
-  left: 0%;
-  transform: translate(-50%, -50%);
+  top: -18px;
+  /* Center the car vertically on the bar */
+  left: 0;
+  transform: translateX(-50%);
   transition: left 0.1s ease-out;
-  z-index: 11;
-  pointer-events: none;
-  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.9)) drop-shadow(0 0 6px rgba(255, 215, 0, 0.6));
+  filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.4));
+  z-index: 10;
 }
 
 .scroll-progress-car svg {
